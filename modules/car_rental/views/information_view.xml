@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="view_information_tree" model="ir.ui.view">
+        <field name="name">car.information.tree</field>
+        <field name="model">car.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type" />
+                <field name="name" />
+                <field name="car_reg" />
+            </tree>
+        </field>
+    </record>
 
-    
+    <record id="view_information_form" model="ir.ui.view">
+        <field name="name">car.information.form</field>
+        <field name="model">car.information</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type" />
+                        <field name="name" />
+                        <field name="car_reg" />
+                    </group>
+                    <notebook>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_information" model="ir.actions.act_window">
+        <field name="name">Information</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.information</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create first information!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_information" name="Information" parent="menu_reservation_root" action="action_car_information" sequence="30"/>
 
 </odoo>

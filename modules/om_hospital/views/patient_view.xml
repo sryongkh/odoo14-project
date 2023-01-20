@@ -75,9 +75,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <!--                    <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" states="draft"-->
-                    <!-- confirm="Are you sure that you need to confirm ?"-->
-                    <!-- type="object"/>-->
+                                       
                     <!--                    <button id="button_done" name="action_done" string="Mark As Done" class="btn-primary" states="confirm"-->
                     <!-- type="object"/>-->
                     <!--                    <button id="button_draft" name="action_draft" string="Set To Draft" class="btn-primary"-->

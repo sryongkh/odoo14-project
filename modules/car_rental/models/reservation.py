@@ -13,11 +13,16 @@ class CarReservation(models.Model):
     start_date = fields.Date(string='วันที่เริ่ม', required=True)
     end_date = fields.Date(string='วันที่คืน', required=True)
 
+    state = fields.Selection([('draft', 'Draft'), ('inprogress', 'In Progressing'),
+                              ('done', 'Done')], default='draft',
+                             string="Status")
+
     @api.model
     def create(self, vals):
-        if not vals.get('car_type') :
+        if not vals.get('car_type'):
             vals['car_type'] = 'New Reservation'
         if vals.get('reference', _('New')) == _('New'):
-            vals['reference'] = self.env['ir.sequence'].next_by_code('car.reservation') or _('New')
+            vals['reference'] = self.env['ir.sequence'].next_by_code(
+                'car.reservation') or _('New')
         res = super(CarReservation, self).create(vals)
         return res
