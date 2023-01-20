@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_car_information,access.car.information,model_car_information,,1,1,1,1
+access_car_type,access.car.type,model_car_type,,1,1,1,1
+access_car_reservation,access.car.reservation,model_car_reservation,,1,1,1,1

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="type_action" model="ir.actions.act_window">
+        <field name="name">Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create first type of car!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="car_root" name="Car" sequence="10"/>
+    <menuitem id="car_type_root" name="Type" parent="car_root" action="type_action" sequence="10"/>
+
+</odoo>

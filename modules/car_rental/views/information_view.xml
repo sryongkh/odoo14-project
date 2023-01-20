@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_information_tree" model="ir.ui.view">
+        <field name="name">car.information.tree</field>
+        <field name="model">car.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_information_form" model="ir.ui.view">
+        <field name="name">car.information.form</field>
+        <field name="model">car.information</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="description" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="information_action" model="ir.actions.act_window">
+        <field name="name">Information</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.information</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create first Information!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="car_root" name="Car" sequence="10"/>
+    <menuitem id="car_information_root" name="Information" parent="car_root" action="information_action" sequence="10"/>
+
+</odoo>
