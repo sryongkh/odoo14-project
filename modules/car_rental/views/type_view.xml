@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="view_type_tree" model="ir.ui.view">
+        <field name="name">car.type.tree</field>
+        <field name="model">car.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
 
-    <record id="type_action" model="ir.actions.act_window">
+    <record id="view_type_form" model="ir.ui.view">
+        <field name="name">car.type.form</field>
+        <field name="model">car.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="type" />
+                        </group>
+                        <group>
+                            <field name="description" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_type" model="ir.actions.act_window">
         <field name="name">Type</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">car.type</field>
@@ -13,7 +42,6 @@
         </field>
     </record>
 
-    <menuitem id="car_root" name="Car" sequence="10"/>
-    <menuitem id="car_type_root" name="Type" parent="car_root" action="type_action" sequence="10"/>
+    <menuitem id="menu_type" name="Type" parent="menu_reservation_root" action="action_car_type" sequence="20"/>
 
 </odoo>
